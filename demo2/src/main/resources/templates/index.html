@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gender Count by College</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(7, 7, 7);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gender Count by College</h1>
+    <table id="genderCountTable">
+        <thead>
+            <tr>
+                <th>College</th>
+                <th>Department</th>
+                <th>Gender</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script>
+        fetch('students/genderCount')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#tableBody');
+
+                for (const college in data) {
+                    const collegeData = data[college];
+
+                    let isFirstCollegeRow = true;
+
+                    for (const department in collegeData) {
+                        const departmentData = collegeData[department];
+                        const departmentRowCount = Object.keys(departmentData).length;
+
+                        let isFirstDepartmentRow = true;
+
+                        for (const gender in departmentData) {
+                            const count = departmentData[gender];
+
+                            const row = document.createElement('tr');
+
+                            if (isFirstCollegeRow) {
+                                const collegeCell = document.createElement('td');
+                                const collegeRowCount = getTotalRowCount(collegeData);
+                                collegeCell.setAttribute('rowspan', collegeRowCount);
+                                collegeCell.textContent = college;
+                                row.appendChild(collegeCell);
+                                isFirstCollegeRow = false;
+                            }
+
+                            if (isFirstDepartmentRow) {
+                                const departmentCell = document.createElement('td');
+                                departmentCell.setAttribute('rowspan', departmentRowCount);
+                                departmentCell.textContent = department;
+                                row.appendChild(departmentCell);
+                                isFirstDepartmentRow = false;
+                            }
+
+                            row.innerHTML += `
+                                <td>${gender}</td>
+                                <td>${count}</td>
+                            `;
+
+                            tableBody.appendChild(row);
+                        }
+                    }
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        function getTotalRowCount(data) {
+            let rowCount = 0;
+            for (const department in data) {
+                rowCount += Object.keys(data[department]).length;
+            }
+            return rowCount;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+# # spring: 
+# #   datasource: 
+# #     driverClassName: com.mysql.jdbc.Driver 
+# #     url: jdbc:mysql://localhost:3306/EMS 
+# #     username: root 
+# #     password: 
+# #   jackson: 
+# #     serialization: 
+# #       FAIL_ON_EMPTY_BEANS: false 
+# #   h2: 
+# #     console: 
+# #       settings: 
+# #         web-allow-others: true 
+# #       enabled: true 
+# #       path: /db 
+# #   jpa: 
+# #       hibernate: 
+# #         ddl-auto: update
+# # logging:
+# #   level:
+# #     ROOT: INFO
+# #     org.springframework: ERROR
+# #     org.hibernate: ERROR
+# #     com.kgisl.sb311aop: TRACE
+
+# #   pattern:
+# #     console: "- %msg%n"
+# #     file: "*[%-5p]-- %m--%n"
+# #   file: 
+# #     name: logs/sb311aop.log
+# # server:
+# #   port: 8080
+# # spring:
+# #   datasource:
+# #     url: jdbc:mysql://localhost:3306/EMS
+# #     username: sa
+# #     password: sa
+# #     driverClassName: org.h2.Driver
+# #   h2:
+# #     console:
+# #       enabled: true
+# #       path: /db
+# #   jpa:
+# #     hibernate:
+# #       ddl-auto: create-drop
+# spring:
+#   datasource:
+#     url: jdbc:mysql://localhost:3306/EMS
+#     username: root
+#     password:
+#     driverClassName: com.mysql.cj.jdbc.Driver
+#   jackson:
+#     serialization:
+#       FAIL_ON_EMPTY_BEANS: false
+#   h2:
+#     console:
+#       enabled: true
+#       path: /db
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+# logging:
+#   level:
+#     ROOT: INFO
+#     org.springframework: ERROR
+#     org.hibernate: ERROR
+#     com.kgisl.demo2: TRACE
+#   pattern:
+#     console: "- %msg%n"
+#     file: "*[%-5p]-- %m--%n"
+#   file:
+#     name: logs/sb311aop.log
+# appenders:
+#     database:
+#       driverClassName: com.mysql.jdbc.Driver
+#       url: jdbc:mysql://localhost:3306/EMS
+#       username: root
+#       password:
+#       tableName: logs
+#       columnList: level, logger, message, timestamp
+#       bufferSize: 10
+#       sql: "INSERT INTO logs (level, logger, message, timestamp) VALUES (?, ?, ?, ?)"
+#   rootLogger:
+#     level: info
+#     appenderRef:
+#       ref: database
+# server:
+#   port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/EMS
+    username: root
+    password:
+    driverClassName: com.mysql.jdbc.Driver
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  h2:
+    console:
+      enabled: true
+      path: /db
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: ERROR
+    org.hibernate: ERROR
+    com.kgisl.demo2: TRACE
+  pattern:
+    console: "- %msg%n"
+    file: "*[%-5p]-- %m--%n"
+  file:
+    name: logs/sb311aop.log
+
+  appenders:
+    databaseAppender:
+      name: databaseAppender
+      JDBC:
+        driver: com.mysql.jdbc.Driver
+        URL: jdbc:mysql://localhost:3306/EMS
+        UserName: root
+        Password:
+        SQL: "INSERT INTO logs (level, logger, message, timestamp) VALUES (?, ?, ?, ?)"
+      ColumnConfigs:
+        - Column:
+            name: level
+            pattern: "%level"
+        - Column:
+            name: logger
+            pattern: "%logger"
+        - Column:
+            name: message
+            pattern: "%message"
+        - Column:
+            name: timestamp
+            isEventTimestamp: true
+
+  loggers:
+    root:
+      level: info
+      AppenderRef:
+        - ref: databaseAppender
+
+server:
+  port: 8080
+

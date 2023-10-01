@@ -1,0 +1,44 @@
+*[INFO ]-- Starting Demo2Application using Java 1.8.0_131 on KGISL084 with PID 1588 (D:\kulanthaivelan\demo2\target\classes started by kulanthaivelan.s in D:\kulanthaivelan\demo2)--
+*[DEBUG]-- Running with Spring Boot v2.7.10, Spring v5.3.26--
+*[INFO ]-- No active profile set, falling back to 1 default profile: "default"--
+*[INFO ]-- Starting service [Tomcat]--
+*[INFO ]-- Starting Servlet engine: [Apache Tomcat/9.0.73]--
+*[INFO ]-- Initializing Spring embedded WebApplicationContext--
+*[INFO ]-- HikariPool-1 - Starting...--
+*[WARN ]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.--
+*[INFO ]-- HikariPool-1 - Start completed.--
+*[INFO ]-- Started Demo2Application in 5.491 seconds (JVM running for 6.319)--
+*[INFO ]-- Starting Demo2Application using Java 1.8.0_131 on KGISL084 with PID 6004 (D:\kulanthaivelan\demo2\target\classes started by kulanthaivelan.s in D:\kulanthaivelan\demo2)--
+*[DEBUG]-- Running with Spring Boot v2.7.10, Spring v5.3.26--
+*[INFO ]-- No active profile set, falling back to 1 default profile: "default"--
+*[INFO ]-- Starting service [Tomcat]--
+*[INFO ]-- Starting Servlet engine: [Apache Tomcat/9.0.73]--
+*[INFO ]-- Initializing Spring embedded WebApplicationContext--
+*[INFO ]-- HikariPool-1 - Starting...--
+*[WARN ]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.--
+*[INFO ]-- HikariPool-1 - Start completed.--
+*[INFO ]-- Started Demo2Application in 3.3 seconds (JVM running for 3.671)--
+*[INFO ]-- HikariPool-1 - Shutdown initiated...--
+*[INFO ]-- HikariPool-1 - Shutdown completed.--
+*[INFO ]-- Starting Demo2Application using Java 1.8.0_131 on KGISL084 with PID 12492 (D:\kulanthaivelan\demo2\target\classes started by kulanthaivelan.s in D:\kulanthaivelan\demo2)--
+*[DEBUG]-- Running with Spring Boot v2.7.10, Spring v5.3.26--
+*[INFO ]-- No active profile set, falling back to 1 default profile: "default"--
+*[INFO ]-- Starting service [Tomcat]--
+*[INFO ]-- Starting Servlet engine: [Apache Tomcat/9.0.73]--
+*[INFO ]-- Initializing Spring embedded WebApplicationContext--
+*[INFO ]-- HikariPool-1 - Starting...--
+*[WARN ]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.--
+*[INFO ]-- HikariPool-1 - Start completed.--
+*[INFO ]-- Started Demo2Application in 3.163 seconds (JVM running for 3.57)--
+*[INFO ]-- Initializing Spring DispatcherServlet 'dispatcherServlet'--
+*[INFO ]-- Before executing method: getGenderCountByCollegeAndDept--
+*[INFO ]-- After executing method: getGenderCountByCollegeAndDept--
+*[INFO ]-- Method returned: [[Ljava.lang.Object;@43ef364]--
+*[INFO ]-- Before executing method: findByDayMonthYear--
+*[INFO ]-- After executing method: findByDayMonthYear--
+*[INFO ]-- Method returned: [Student [id=1, name=Leo x jawan, dateOfBirth=2000-07-04, year=4, gender=Male, college=Leo University, dept=Cameo]]--
+*[INFO ]-- Before executing method: getGenderCountByCollegeAndDept--
+*[INFO ]-- After executing method: getGenderCountByCollegeAndDept--
+*[INFO ]-- Method returned: [[Ljava.lang.Object;@5547b63b]--
+*[INFO ]-- HikariPool-1 - Shutdown initiated...--
+*[INFO ]-- HikariPool-1 - Shutdown completed.--
