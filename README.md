@@ -28,8 +28,7 @@ Before you begin, make sure you have the following:
 
 Follow these steps to set up and run the application:
 
-1. Clone the repository:
-  [ git clone https://github.com/yourusername/spring-boot-student-management.git](https://github.com/kulanthaivelan/SpringCustomRepository.git)
+1. Clone the repository:(https://github.com/kulanthaivelan/SpringCustomRepository.git)
   
 
 2. Navigate to the project directory:
